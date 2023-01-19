@@ -12,7 +12,7 @@ pipeline {
                 // Get some code from a GitHub repository
                 git 'https://github.com/JFMcKay/MyDevPizza.git'
 
-                // Run Maven on a Unix agent.
+                // Run Maven on a Unix agent as a shell command
                 sh "mvn -Dmaven.test.failure.ignore=true package"
 
                 // To run Maven on a Windows agent, use
@@ -26,6 +26,12 @@ pipeline {
                     junit '**/target/surefire-reports/TEST-*.xml'
                     archiveArtifacts 'target/*.jar'
                 }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                // Should set up to deploy to a docker container or server
+                echo "***Deploying to whatever***"
             }
         }
     }
