@@ -3,3 +3,4 @@ target
 !.gitignore
 /src/main/resources/public/node_modules/
 /DeveloperPizza.iml
+/src/main/resources/frontend/
