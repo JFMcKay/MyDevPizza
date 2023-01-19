@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        // Install the Maven version configured as "M3" and add it to the path.
+        // Install the Maven version configured as "Fill with the name of given to the maven tool install in config" and add it to the path.
         maven 'MavenInstall'
     }
 
@@ -13,7 +13,7 @@ pipeline {
                 git 'https://github.com/JFMcKay/MyDevPizza.git'
 
                 // Run Maven on a Unix agent.
-                sh "mvn -Dmaven.test.failure.ignore=true clean package"
+                sh "mvn -Dmaven.test.failure.ignore=true package"
 
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
